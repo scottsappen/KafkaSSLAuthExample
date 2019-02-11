@@ -1,5 +1,7 @@
 # KafkaSSLAuthExample
-A simple example of setting up Kafka (brokers and clients) to do 1-way and 2-way SSL authentication. 1-way is basically SSL encryption where the clients verify the broker certs to establish a SSL connection. The clients are effectively "anonymous" whereas in 2-way authentication, the clients and the brokers have signed certs and both verify each other. In that way, the clients will have "identity" and this will help you when creating ACLs as well.
+A simple example of setting up Kafka (brokers and clients) to do 1-way and 2-way SSL authentication.
+
+1-way is basically SSL encryption where the clients verify the broker certs to establish a SSL connection. The clients are effectively "anonymous" whereas in 2-way authentication, the clients and the brokers have signed certs and both verify each other. In that way, the clients will have "identity" and this will help you when creating ACLs as well.
 
 **Prereqs**
 
