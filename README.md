@@ -212,14 +212,6 @@ Configure and test 2-way SSL authentication**
 
 This is 2-way where the broker will validate the client's identify. This requires us to generate certs for our clients, but also reconfigure the brokers to require SSL authentication.
 
-Mac Sappenfield
-```
-keytool -genkey -keystore kafka.client.keystore.jks -validity 365 -storepass confluent -keypass confluent -dname "CN=mylaptop" -alias my-local-pc -storetype pkcs12
-
-keytool -keystore kafka.client.keystore.jks -certreq -file client-cert-sign-request -alias my-local-pc -storepass confluent -keypass confluent
-```
-
-Ubuntu
 ```
 keytool -genkey -keystore kafka.client.keystore.jks -validity 365 -storepass confluent -keypass confluent -dname "CN=mylocalclient" -alias my-local-client -storetype pkcs12
 
@@ -245,15 +237,7 @@ Now back on our local laptop, download that signed cert by the CA and the CA cer
 scp -i ~<your pem file>.pem ubuntu@<your kafka public server>:/tmp/client-cert-signed .
 
 keytool -keystore kafka.client.keystore.jks -alias CARoot -import -file ca-cert -storepass confluent -keypass confluent -noprompt
-```
 
-Mac Sappenfield
-```
-keytool -keystore kafka.client.keystore.jks -alias my-local-pc -import -file client-cert-signed -storepass confluent -keypass confluent -noprompt
-```
-
-Ubuntu
-```
 keytool -keystore kafka.client.keystore.jks -alias my-local-client -import -file client-cert-signed -storepass confluent -keypass confluent -noprompt
 ```
 
