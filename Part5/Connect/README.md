@@ -36,11 +36,15 @@ producer.bootstrap.servers=<your kafka server>:9093
 producer.security.protocol=SSL
 producer.ssl.truststore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.client.truststore.jks
 producer.ssl.truststore.password=confluent
+producer.ssl.keystore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.server.keystore.jks
+producer.ssl.keystore.password=confluent
 
 consumer.bootstrap.servers=<your kafka server>:9093
 consumer.security.protocol=SSL
 consumer.ssl.truststore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.client.truststore.jks
 consumer.ssl.truststore.password=confluent
+consumer.ssl.keystore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.server.keystore.jks
+consumer.ssl.keystore.password=confluent
 ```
 
 Restart Connect
@@ -55,6 +59,34 @@ Restart Connect
 **Part 1
 Connect's REST endpoint**
 
-Now 2DO: get the connect rest interface running using SSl
+First, again for a quick sanity check make sure you can query using non-SSL. This should work as you haven't changed any settings yet.
 
-curl http://localhost:8083/connectors | jq
+```
+curl http://<your kafka server>:8083/connectors | jq
+```
+
+Now let's change over to SSL for the REST endpoint.
+
+```
+vi /etc/schema-registry/connect-avro-distributed.properties
+
+listeners=https://<your kafka server>:8889
+ssl.client.auth=true
+```
+
+Restart Connect
+
+```
+./bin/confluent stop connect
+
+./bin/confluent start connect
+```
+
+Run a test on port 8889 and make sure you can connect!
+```
+curl -vk --key restproxy.key --cert restproxy.certificate.pem --cacert restproxy.certificate.pem "https://<your kafka server>:8889/connectors"
+```
+
+If you need help creating the appropriate key and pem files, see the section under RESTProxy labeled "Create the requisite files for SSL communication." It's a similar process.
+
+Success!

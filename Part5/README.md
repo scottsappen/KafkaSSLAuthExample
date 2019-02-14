@@ -9,8 +9,8 @@ See the sub-directories for more information specific to those components. Recal
 
 - Kafka brokers (inter-broker communication to SSL)
 - Confluent Control Center
-- Confluent REST Proxy
 - Kafka Connect and the REST interface
+- Confluent REST Proxy
 - KSQL REST interface
 - Schema Registry
 

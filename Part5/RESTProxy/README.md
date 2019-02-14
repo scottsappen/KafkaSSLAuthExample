@@ -68,6 +68,29 @@ Configuring clients to use SSL to the REST Proxy**
 Now let's get the clients talk talk to REST proxy using SSL (or HTTPS).
 
 ```
+sudo vi ../etc/kafka-rest/kafka-rest.properties
+
+listeners=https://<your kafka server>:8888
+
+#HTTPS between REST clients and the REST Proxy
+ssl.keystore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.server.keystore.jks
+ssl.keystore.password=confluent
+ssl.key.password=confluent
+ssl.truststore.location=/home/ubuntu/confluent-5.1.1/ssl/kafka.server.truststore.jks
+ssl.truststore.password=confluent
+ssl.protocol=TLS
+ssl.client.auth=true
+```
+
+Restart REST Proxy
+```
+./bin/confluent stop kafka-rest
+
+./bin/confluent start kafka-rest
+```
+
+Create the requisite files for SSL communication.
+```
 keytool -export -alias mykey -file restproxy.der -keystore kafka.server.keystore.jks -storepass confluent
 
 openssl x509 -inform der -in restproxy.der -out restproxy.certificate.pem
@@ -85,6 +108,6 @@ Verify SSL is working for the connection.
 curl -vk --key restproxy.key --cert restproxy.certificate.pem --cacert restproxy.certificate.pem "https://<your kafka server>:8888/topics"
 ```
 
-Success!!
+Success!
 
 Note if you have issues (e.g. handshakes), you may run into a number of problems around installed curl version, supported crypto, etc. You may be best served trying this from a few different types of servers to narrow down issues.
