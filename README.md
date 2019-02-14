@@ -1,6 +1,8 @@
 # KafkaSSLAuthExample
 A simple example of setting up Kafka (brokers and clients) to do 1-way and 2-way SSL authentication.
 
+I recently expanded this repo to include Part 5 which adds in SSL configuration for other Confluent Kafka components.
+
 1-way is basically SSL encryption where the clients verify the broker certs to establish a SSL connection. The clients are effectively "anonymous" whereas in 2-way authentication, the clients and the brokers have signed certs and both verify each other. In that way, the clients will have "identity" and this will help you when creating ACLs as well.
 
 In this example, we will still leave the default 9092 port available as PLAINTEXT to show you how that still works even after enabling security. However, we will setup port 9093 with SSL and use simple consumers and producers to connect to those ports specifically passing in the right set of SSL parameters.
