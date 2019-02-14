@@ -5,8 +5,6 @@ A simple example of setting up Kafka (brokers and clients) to do 1-way and 2-way
 
 In this example, we will still leave the default 9092 port available as PLAINTEXT to show you how that still works even after enabling security. However, we will setup port 9093 with SSL and use simple consumers and producers to connect to those ports specifically passing in the right set of SSL parameters.
 
-Also, keep in mind there are other components of a true Kafka platform such as Schema Registry and Kafka Connect. Those you will want to also secure, but once you get the principals down, the rest should be straightforward.
-
 **Prereqs**
 
 This assumes you already possess some know-how in AWS (SSH into boxes, create or use an appropriate VPC,create or use an appropriate security group) as well as run some basic linux commands. You probably would not be here if that was foreign.
@@ -26,5 +24,6 @@ See the subdirectories in this repo for the details of each part:
 - Part 2 - Setup plaintext un-secure for a quick test
 - Part 3 - Configure and test 1-way SSL authentication
 - Part 4 - Configure and test 2-way SSL authentication
+- Part 5 - Configure other aspects of the Confluent platform with SSL
 
 That's it. When you're done, I hope you will have enjoyed this walkthrough and learned something new.
