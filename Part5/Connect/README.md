@@ -12,9 +12,9 @@ The first part is required if you want Connect to use SSL in communication with 
 The second part is required if you want to secure the REST endpoint with Connect. This is a REST endpoint for Connect, not to be confused with the RESTProxy.
 
 <br/>
-**Part 1
-Connect configuration to the brokers**
 
+**Part 1<br/>
+Connect configuration to the brokers**
 
 These top-level settings are used by the Connect worker for group coordination and to read and write to the internal topics which are used to track the cluster's state (e.g. configs and offsets).
 
@@ -57,7 +57,8 @@ Restart Connect
 ```
 
 <br/>
-**Part 1
+
+**Part 1<br/>
 Connect's REST endpoint**
 
 
