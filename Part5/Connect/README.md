@@ -15,6 +15,7 @@ The second part is required if you want to secure the REST endpoint with Connect
 **Part 1
 Connect configuration to the brokers**
 
+
 These top-level settings are used by the Connect worker for group coordination and to read and write to the internal topics which are used to track the cluster's state (e.g. configs and offsets).
 
 ```
@@ -58,6 +59,7 @@ Restart Connect
 <br/>
 **Part 1
 Connect's REST endpoint**
+
 
 First, again for a quick sanity check make sure you can query using non-SSL. This should work as you haven't changed any settings yet.
 
