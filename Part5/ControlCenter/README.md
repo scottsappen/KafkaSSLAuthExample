@@ -14,7 +14,8 @@ The first part is required if you want to see the system health in Control Cente
 The second part however is optional and only needed if you want to use the Data Streams capability. This is highly recommended because you can see real-time consumer/producer health.
 
 <br/>
-**Part 1
+
+**Part 1<br/>
 Confluent Metrics Reporter**
 
 Let's get the basics completed first.
@@ -81,7 +82,8 @@ Restart Confluent
 ```
 
 <br/>
-**Part 1
+
+**Part 1<br/>
 Data Streams**
 
 Let's work on the optional data streams part and do some simple testing. To get the Data Streams working, you must configure your consumer and producer apps to use the interceptor jars.

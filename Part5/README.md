@@ -1,6 +1,6 @@
 # Part 5
 
-**Part 5
+**Part 5<br/>
 Configure other aspects of the Confluent platform with SSL**
 
 This part will cover enabling SSL on a number of other Confluent components.

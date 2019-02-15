@@ -8,7 +8,8 @@ There are 2 parts to this:
 - Configuring clients to use SSL to the REST Proxy
 
 <br/>
-**Part 1
+
+**Part 1<br/>
 Configuring SSL from the REST Proxy to the brokers**
 
 First, verify again it works without SSL just as a sanity check.
@@ -62,7 +63,8 @@ curl http://<your kafka server>:8888/topics | jq
 Success!
 
 <br/>
-**Part 2
+
+**Part 2<br/>
 Configuring clients to use SSL to the REST Proxy**
 
 Now let's get the clients talk talk to REST proxy using SSL (or HTTPS).

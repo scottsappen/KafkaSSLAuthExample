@@ -16,7 +16,8 @@ The second part is required if you want to secure the REST endpoint with Schema 
 In this example, we will leave HTTP enabled on the default port and enable SSL on a new port. In practice, you can disable HTTP and inter.instance.protocol=https and require 2-way SSL auth. Remember to take care of other components that might use http to Schema Registry as a default (e.g. Control Center, Connect).
 
 <br/>
-**Part 1
+
+**Part 1<br/>
 Schema Registry configuration to the brokers**
 
 As a sanity check, verify you can access the registry on PLAINTEXT.
@@ -54,7 +55,8 @@ curl <your kafka server>:8081/subjects
 ```
 
 <br/>
-**Part 2
+
+**Part 2<br/>
 Connect's REST endpoint**
 
 Now let's configure the SSL REST endpoint.
