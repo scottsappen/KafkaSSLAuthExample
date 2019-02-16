@@ -29,13 +29,15 @@ cd bin
 ```
 
 That was simple. You should not have any issues. If you get errors, confirm you started on an instance with enough resources (e.g. RAM). Check out a few things...
+
 ```
 ./confluent status
 ./kafka-topics --zookeeper localhost:2181 --list
 ```
+
 Navigate to Confluent Control Center in your browser:
 ```
-http://<your kafka public server>:9021
+http://<your kafka server>:9021
 ```
 
 That's it. You are ready to move onto the next part.
