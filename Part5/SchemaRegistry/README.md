@@ -87,4 +87,6 @@ And this should now work.
 curl -vk --key restproxy.key --cert restproxy.certificate.pem --cacert restproxy.certificate.pem "https://<your kafka server>:8890/subjects"
 ```
 
+If you need help creating the appropriate key and pem files, see the section under RESTProxy labeled "Create the requisite files for SSL communication." It's a similar process.
+
 That's it!
