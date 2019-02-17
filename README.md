@@ -27,5 +27,6 @@ See the subdirectories in this repo for the details of each part:
 - Part 3 - Configure and test 1-way SSL authentication
 - Part 4 - Configure and test 2-way SSL authentication
 - Part 5 - Configure other aspects of the Confluent platform with SSL
+- Bonus - Configure the REST Proxy to use the Confluent security plugin for principal propagation
 
 That's it. When you're done, I hope you will have enjoyed this walkthrough and learned something new.
